@@ -1,3 +1,5 @@
+# This is a conversion of https://github.com/pflky/BBox-Studio that works in comfyui
+
 # BBox Studio for ComfyUI
 
 A bounding-box layout editor for MOSS-Image, built into one ComfyUI node. Draw boxes on the node, caption them, and wire the `prompt` output to your text encoder. No other layout node is needed.
