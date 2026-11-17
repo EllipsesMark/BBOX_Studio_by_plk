@@ -1,0 +1,2087 @@
+{
+  "id": "219aa729-3758-4405-8c5e-bcf49d0a9881",
+  "revision": 0,
+  "last_node_id": 211,
+  "last_link_id": 505,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "SkipLayerGuidanceDiTSimple",
+      "pos": [
+        1499.9682479484245,
+        1836.453338193122
+      ],
+      "size": [
+        459.28738035279343,
+        130
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "showAdvanced": true,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 505
+        },
+        {
+          "label": "double_layers",
+          "name": "double_layers",
+          "type": "STRING",
+          "widget": {
+            "name": "double_layers"
+          },
+          "link": null
+        },
+        {
+          "label": "single_layers",
+          "name": "single_layers",
+          "type": "STRING",
+          "widget": {
+            "name": "single_layers"
+          },
+          "link": null
+        },
+        {
+          "label": "start_percent",
+          "name": "start_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "start_percent"
+          },
+          "link": null
+        },
+        {
+          "label": "end_percent",
+          "name": "end_percent",
+          "type": "FLOAT",
+          "widget": {
+            "name": "end_percent"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            185
+          ]
+        }
+      ],
+      "title": "SkipLayerGuidanceDiTSimple (uncond skips block 22)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "SkipLayerGuidanceDiTSimple",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "22",
+        0,
+        0.5
+      ],
+      "widgets_values_named": {
+        "double_layers": "",
+        "single_layers": "22",
+        "start_percent": 0,
+        "end_percent": 0.5
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        1494.295901003966,
+        1636.1116966570612
+      ],
+      "size": [
+        421.30863550976653,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            99,
+            173
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "flux2-vae.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2730.6705002109484,
+        2117.571987843211
+      ],
+      "size": [
+        460,
+        260
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 37
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 483
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            174,
+            294
+          ]
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "medium close up selfie, woman with large round fake breasts. she is a beautiful latin woman with high cheekbones, glam makeup, large plump lips"
+      ],
+      "widgets_values_named": {
+        "text": "medium close up selfie, woman with large round fake breasts. she is a beautiful latin woman with high cheekbones, glam makeup, large plump lips"
+      }
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2730.6705002109484,
+        1997.5021950833361
+      ],
+      "size": [
+        517.780374533214,
+        158.46311313100568
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 38
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            498,
+            499
+          ]
+        }
+      ],
+      "title": "Negative Prompt (empty = reference default)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "blurry, bad quality, bad image, anime, 3d, drawing, tattoo, watermark, bright well lit studio lighting"
+      ],
+      "widgets_values_named": {
+        "text": "blurry, bad quality, bad image, anime, 3d, drawing, tattoo, watermark, bright well lit studio lighting"
+      }
+    },
+    {
+      "id": 7,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        2895.638675753822,
+        2078.571987843211
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 484
+        },
+        {
+          "label": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 488
+        },
+        {
+          "label": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            366
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 9,
+      "type": "VAEDecode",
+      "pos": [
+        2801.1699025356224,
+        3104.213156093077
+      ],
+      "size": [
+        170.99329039582608,
+        46
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 282
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 99
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "VAEDecode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        2730.6705002109484,
+        2078.571987843211
+      ],
+      "size": [
+        583.9730243719464,
+        944.4268957461647
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            76
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "moss_image\\moss_image"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "moss_image\\moss_image"
+      }
+    },
+    {
+      "id": 18,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        1499.9682479484245,
+        1734.9459506127662
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 219
+        },
+        {
+          "label": "attention",
+          "name": "attention",
+          "type": "COMBO",
+          "widget": {
+            "name": "attention"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            505
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "ModelAttentionBackend",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "comfy kitchen attention"
+      ],
+      "widgets_values_named": {
+        "attention": "comfy kitchen attention"
+      }
+    },
+    {
+      "id": 29,
+      "type": "ModelPreviewOverrideKJ",
+      "pos": [
+        3136.1995353621355,
+        2193.758415879647
+      ],
+      "size": [
+        335.66861255661615,
+        981.7975665347667
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 497
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "label": "max_resolution",
+          "name": "max_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "max_resolution"
+          },
+          "link": null
+        },
+        {
+          "label": "jpeg_quality",
+          "name": "jpeg_quality",
+          "type": "INT",
+          "widget": {
+            "name": "jpeg_quality"
+          },
+          "link": null
+        },
+        {
+          "label": "suppress_default_preview",
+          "name": "suppress_default_preview",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "suppress_default_preview"
+          },
+          "link": null
+        },
+        {
+          "label": "preview_frames",
+          "name": "preview_frames",
+          "type": "INT",
+          "widget": {
+            "name": "preview_frames"
+          },
+          "link": null
+        },
+        {
+          "label": "preview_fps",
+          "name": "preview_fps",
+          "type": "INT",
+          "widget": {
+            "name": "preview_fps"
+          },
+          "link": null
+        },
+        {
+          "label": "tiny_vae",
+          "name": "tiny_vae",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "tiny_vae"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_vae",
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            292,
+            477
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fearnworksnodes",
+        "ver": "0.1.2",
+        "Node name for S&R": "ModelPreviewOverrideKJ",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        1024,
+        80,
+        true,
+        1,
+        1,
+        "taeh3_model_preview.safetensors",
+        ""
+      ],
+      "widgets_values_named": {
+        "max_resolution": 1024,
+        "jpeg_quality": 80,
+        "suppress_default_preview": true,
+        "preview_frames": 1,
+        "preview_fps": 1,
+        "tiny_vae": "taeh3_model_preview.safetensors",
+        "preview": ""
+      }
+    },
+    {
+      "id": 34,
+      "type": "UNETLoader",
+      "pos": [
+        1494.295901003966,
+        1358.5342706682072
+      ],
+      "size": [
+        421.30863550976653,
+        92.50962248932325
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            219
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "UNETLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "MOSS Image\\moss_image_base_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "MOSS Image\\moss_image_base_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 35,
+      "type": "CLIPLoader",
+      "pos": [
+        1494.295901003966,
+        1489.1433833505166
+      ],
+      "size": [
+        421.30863550976653,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            37,
+            38,
+            172
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "CLIPLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "moss\\qwen3.5_9b_int8_convrot.safetensors",
+        "moss_image",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "moss\\qwen3.5_9b_int8_convrot.safetensors",
+        "type": "moss_image",
+        "device": "default"
+      }
+    },
+    {
+      "id": 52,
+      "type": "PreviewImage",
+      "pos": [
+        3488.934705390333,
+        2193.758415879647
+      ],
+      "size": [
+        625.1289588348491,
+        981.7975665347667
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 97,
+      "type": "SetNode",
+      "pos": [
+        1959.2556283012177,
+        1653.0439690718013
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 185
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "title": "Set_model",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "model",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "model"
+      ],
+      "widgets_values_named": {
+        "Constant": "model"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 98,
+      "type": "SetNode",
+      "pos": [
+        1961.2792605911923,
+        1557.1433833505166
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": []
+        }
+      ],
+      "title": "Set_clip",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "clip",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "widgets_values_named": {
+        "Constant": "clip"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 99,
+      "type": "SetNode",
+      "pos": [
+        1961.2792605911923,
+        1608.5494184072036
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "link": 173
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": []
+        }
+      ],
+      "title": "Set_vae",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "vae",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "vae"
+      ],
+      "widgets_values_named": {
+        "Constant": "vae"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 100,
+      "type": "SetNode",
+      "pos": [
+        2730.6705002109484,
+        2041.5719878432112
+      ],
+      "size": [
+        223.53515625,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 174
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "title": "Set_posPrompts",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "posPrompts",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "posPrompts"
+      ],
+      "widgets_values_named": {
+        "Constant": "posPrompts"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 101,
+      "type": "SetNode",
+      "pos": [
+        2895.638675753822,
+        2041.5719878432112
+      ],
+      "size": [
+        223.53515625,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 498
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": []
+        }
+      ],
+      "title": "Set_negPrompt",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "negPrompt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "negPrompt"
+      ],
+      "widgets_values_named": {
+        "Constant": "negPrompt"
+      },
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 133,
+      "type": "GetNode",
+      "pos": [
+        2981.838871066322,
+        3089.213156093077
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            497
+          ]
+        }
+      ],
+      "title": "Get_model",
+      "properties": {
+        "Node name for S&R": "GetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "model"
+      ],
+      "widgets_values_named": {
+        "Constant": "model"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 135,
+      "type": "SamplerCustom",
+      "pos": [
+        2800.0449025356224,
+        2228.9314729886
+      ],
+      "size": [
+        271.125,
+        230
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 292
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 294
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 499
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 436
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 500
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 366
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 495
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            282
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "SamplerCustom",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        true,
+        993054399489927,
+        "randomize",
+        4
+      ],
+      "widgets_values_named": {
+        "add_noise": true,
+        "noise_seed": 993054399489927,
+        "control_after_generate": "randomize",
+        "cfg": 4
+      }
+    },
+    {
+      "id": 138,
+      "type": "BasicScheduler",
+      "pos": [
+        2800.0449025356224,
+        2663.398963288645
+      ],
+      "size": [
+        270,
+        107.40530641563282
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 477
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            479
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "BasicScheduler",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "power_shift",
+        30,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "power_shift",
+        "steps": 30,
+        "denoise": 1
+      }
+    },
+    {
+      "id": 169,
+      "type": "SamplerER_SDE",
+      "pos": [
+        2800.0449025356224,
+        2496.1652181386225
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            436
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.44.0",
+        "Node name for S&R": "SamplerER_SDE",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "ER-SDE",
+        3,
+        1.02,
+        1.1
+      ],
+      "widgets_values_named": {
+        "solver_type": "ER-SDE",
+        "max_stage": 3,
+        "eta": 1.02,
+        "s_noise": 1.1
+      }
+    },
+    {
+      "id": 190,
+      "type": "BBoxStudio",
+      "pos": [
+        1334.4623384225015,
+        2193.758415879647
+      ],
+      "size": [
+        1396.208161788447,
+        981.7975665347667
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "json",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "preview",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            484
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            488
+          ]
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "links": []
+        },
+        {
+          "name": "character_boxes",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            483
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BBoxStudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "",
+        "{\"width\":1920,\"height\":1088,\"meta\":[\"flat vector art\"],\"canvas_type\":\"single\",\"caption\":\"an arrangement of items throughout the image\",\"grid\":\"fine\",\"snap\":false,\"match_input\":true,\"bg\":null,\"view\":{\"scale\":0.55790625,\"offset_x\":4.767830387216009,\"offset_y\":-5.180712301065512},\"selected\":2,\"items\":[{\"label\":\"text\",\"caption\":\"Graffiti stylized lettering with dripping paint marker. Lettering is in dripping paint graffiti marker on the corners of swooped line points\",\"text\":\"BBOX STUDIO\",\"color\":\"#fbbf24\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-528.8888888888889,\"x_min\":-712.5000000000001,\"y_max\":-34.15306242529398,\"x_max\":787.4999999999998},{\"label\":\"object\",\"caption\":\"a plethora of different sized squares and rectangles with the lettering \\\"text\\\" inside of them\",\"text\":\"\",\"color\":\"#60a5fa\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-230.37456825260193,\"x_min\":-918.2540090410165,\"y_max\":498.53416252926587,\"x_max\":905.6391565571803},{\"label\":\"object\",\"caption\":\"a plethora of different sized squares and rectangles with the lettering \\\"obj\\\" inside of them\",\"text\":\"\",\"color\":\"#6ee7a8\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-206.37456825260193,\"x_min\":-894.2540090410165,\"y_max\":522.5341625292658,\"x_max\":929.6391565571803}]}",
+        true
+      ],
+      "widgets_values_named": {
+        "bbox_ui": "",
+        "state": "{\"width\":1920,\"height\":1088,\"meta\":[\"flat vector art\"],\"canvas_type\":\"single\",\"caption\":\"an arrangement of items throughout the image\",\"grid\":\"fine\",\"snap\":false,\"match_input\":true,\"bg\":null,\"view\":{\"scale\":0.55790625,\"offset_x\":4.767830387216009,\"offset_y\":-5.180712301065512},\"selected\":2,\"items\":[{\"label\":\"text\",\"caption\":\"Graffiti stylized lettering with dripping paint marker. Lettering is in dripping paint graffiti marker on the corners of swooped line points\",\"text\":\"BBOX STUDIO\",\"color\":\"#fbbf24\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-528.8888888888889,\"x_min\":-712.5000000000001,\"y_max\":-34.15306242529398,\"x_max\":787.4999999999998},{\"label\":\"object\",\"caption\":\"a plethora of different sized squares and rectangles with the lettering \\\"text\\\" inside of them\",\"text\":\"\",\"color\":\"#60a5fa\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-230.37456825260193,\"x_min\":-918.2540090410165,\"y_max\":498.53416252926587,\"x_max\":905.6391565571803},{\"label\":\"object\",\"caption\":\"a plethora of different sized squares and rectangles with the lettering \\\"obj\\\" inside of them\",\"text\":\"\",\"color\":\"#6ee7a8\",\"locked\":false,\"aspect_locked\":false,\"y_min\":-206.37456825260193,\"x_min\":-894.2540090410165,\"y_max\":522.5341625292658,\"x_max\":929.6391565571803}]}",
+        "draw_boxes": true
+      }
+    },
+    {
+      "id": 196,
+      "type": "MOSSImageLayoutPrompt",
+      "pos": [
+        2114.214973379563,
+        4950.482202126328
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "element",
+          "type": "ARRAY",
+          "link": 443
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 449
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 450
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            447
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "MOSSImageLayoutPrompt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "an infographic with a background of comfyui canvase hectagonal patterned background with a github color theme. ",
+        1024,
+        1024,
+        ""
+      ],
+      "widgets_values_named": {
+        "prompt": "an infographic with a background of comfyui canvase hectagonal patterned background with a github color theme. ",
+        "width": 1024,
+        "height": 1024,
+        "character_boxes": ""
+      }
+    },
+    {
+      "id": 198,
+      "type": "CreateBoundingBoxesCanvas",
+      "pos": [
+        1193.7166268355577,
+        4908.40565986847
+      ],
+      "size": [
+        864.711583451036,
+        860.6837151424934
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "background",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "bboxes",
+          "shape": 7,
+          "type": "BOUNDING_BOX,ARRAY,STRING",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 445
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 446
+        }
+      ],
+      "outputs": [
+        {
+          "name": "preview",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX",
+          "links": null
+        },
+        {
+          "name": "elements",
+          "type": "ARRAY",
+          "links": [
+            443
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            449
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            450
+          ]
+        },
+        {
+          "name": "character_boxes",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateBoundingBoxesCanvas",
+        "bbc_overlay": true,
+        "bbc_opacity": 0.65,
+        "bbc_dims": [
+          1928,
+          1088
+        ],
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "[{\"x\":90,\"y\":16,\"width\":1778,\"height\":328,\"metadata\":{\"type\":\"text\",\"text\":\"BBOX - Studio for ComfyUI by plk (Laser_Grid_84 on civitai)\",\"desc\":\"Extreme graphic lettering with bold paint dripping text neon colors bold outlining in a semi graffiti style\",\"palette\":[],\"use_palette\":false,\"character\":false,\"display_color\":\"#E6194B\"}}]",
+        "",
+        1,
+        "4ch /8 (SD1.x, SDXL)",
+        ""
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "box_data": "[{\"x\":90,\"y\":16,\"width\":1778,\"height\":328,\"metadata\":{\"type\":\"text\",\"text\":\"BBOX - Studio for ComfyUI by plk (Laser_Grid_84 on civitai)\",\"desc\":\"Extreme graphic lettering with bold paint dripping text neon colors bold outlining in a semi graffiti style\",\"palette\":[],\"use_palette\":false,\"character\":false,\"display_color\":\"#E6194B\"}}]",
+        "last_incoming": "",
+        "batch_size": 1,
+        "latent_type": "4ch /8 (SD1.x, SDXL)",
+        "bbox_editor": ""
+      }
+    },
+    {
+      "id": 201,
+      "type": "ResolutionSelector",
+      "pos": [
+        863.3621346480578,
+        5132.393440291855
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            445
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            446
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "ResolutionSelector",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "16:9 (Widescreen)",
+        2,
+        8
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "16:9 (Widescreen)",
+        "megapixels": 2,
+        "multiple": 8
+      }
+    },
+    {
+      "id": 202,
+      "type": "easy showAnything",
+      "pos": [
+        2112.4371368700945,
+        5250.928763302164
+      ],
+      "size": [
+        495.79430864935057,
+        304.9458916971698
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 447
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        "{\"summary\":{\"caption\":\"an infographic with a background of comfyui canvase hectagonal patterned background with a github color theme.\"},\"items\":[{\"label\":\"text\",\"caption\":\"Extreme graphic lettering with bold paint dripping text neon colors bold outlining in a semi graffiti style\",\"text\":\"BBOX - Studio for ComfyUI by plk (Laser_Grid_84 on civitai)\",\"bbox\":[-528,-874,-200,905]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}"
+      ],
+      "widgets_values_named": {
+        "text": "{\"summary\":{\"caption\":\"an infographic with a background of comfyui canvase hectagonal patterned background with a github color theme.\"},\"items\":[{\"label\":\"text\",\"caption\":\"Extreme graphic lettering with bold paint dripping text neon colors bold outlining in a semi graffiti style\",\"text\":\"BBOX - Studio for ComfyUI by plk (Laser_Grid_84 on civitai)\",\"bbox\":[-528,-874,-200,905]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}"
+      }
+    },
+    {
+      "id": 205,
+      "type": "UC_SigmaRescale",
+      "pos": [
+        2794.994144503822,
+        2814.9331881513326
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 479
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Sigmas",
+          "type": "SIGMAS",
+          "links": [
+            500
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-UtilsCollection",
+        "ver": "cd101e7fea5fe81cfedc9df6731f11df2282a635",
+        "Node name for S&R": "UC_SigmaRescale",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        1,
+        0.1
+      ],
+      "widgets_values_named": {
+        "start_sigma": 1,
+        "end_sigma": 0.1
+      }
+    },
+    {
+      "id": 209,
+      "type": "SeedNode",
+      "pos": [
+        2801.1699025356224,
+        2966.4719424645964
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            495
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "SeedNode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        }
+      },
+      "widgets_values": [
+        195,
+        "increment"
+      ],
+      "widgets_values_named": {
+        "seed": 195,
+        "control_after_generate": "increment"
+      }
+    }
+  ],
+  "links": [
+    [
+      10,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      35,
+      0,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      38,
+      35,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      76,
+      10,
+      0,
+      52,
+      0,
+      "IMAGE"
+    ],
+    [
+      99,
+      4,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      172,
+      35,
+      0,
+      98,
+      0,
+      "CLIP"
+    ],
+    [
+      173,
+      4,
+      0,
+      99,
+      0,
+      "VAE"
+    ],
+    [
+      174,
+      5,
+      0,
+      100,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      185,
+      2,
+      0,
+      97,
+      0,
+      "MODEL"
+    ],
+    [
+      219,
+      34,
+      0,
+      18,
+      0,
+      "MODEL"
+    ],
+    [
+      282,
+      135,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      292,
+      29,
+      0,
+      135,
+      0,
+      "MODEL"
+    ],
+    [
+      294,
+      5,
+      0,
+      135,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      366,
+      7,
+      0,
+      135,
+      5,
+      "LATENT"
+    ],
+    [
+      436,
+      169,
+      0,
+      135,
+      3,
+      "SAMPLER"
+    ],
+    [
+      443,
+      198,
+      2,
+      196,
+      0,
+      "ARRAY"
+    ],
+    [
+      445,
+      201,
+      0,
+      198,
+      2,
+      "INT"
+    ],
+    [
+      446,
+      201,
+      1,
+      198,
+      3,
+      "INT"
+    ],
+    [
+      447,
+      196,
+      0,
+      202,
+      0,
+      "STRING"
+    ],
+    [
+      449,
+      198,
+      4,
+      196,
+      1,
+      "INT"
+    ],
+    [
+      450,
+      198,
+      5,
+      196,
+      2,
+      "INT"
+    ],
+    [
+      477,
+      29,
+      0,
+      138,
+      0,
+      "MODEL"
+    ],
+    [
+      479,
+      138,
+      0,
+      205,
+      0,
+      "SIGMAS"
+    ],
+    [
+      483,
+      190,
+      6,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      484,
+      190,
+      2,
+      7,
+      0,
+      "INT"
+    ],
+    [
+      488,
+      190,
+      3,
+      7,
+      1,
+      "INT"
+    ],
+    [
+      495,
+      209,
+      0,
+      135,
+      6,
+      "INT"
+    ],
+    [
+      497,
+      133,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      498,
+      6,
+      0,
+      101,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      499,
+      6,
+      0,
+      135,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      500,
+      205,
+      0,
+      135,
+      4,
+      "SIGMAS"
+    ],
+    [
+      505,
+      18,
+      0,
+      2,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6110027894055248,
+      "offset": [
+        -1887.3584542612164,
+        -1287.8490091119959
+      ]
+    },
+    "frontendVersion": "1.58.5",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "anomalous_hashes": {
+      "4_flux2-vae.safetensors": {
+        "hash": "",
+        "size": 336211292,
+        "url": ""
+      },
+      "16_moss_image_sft_int8_convrot.safetensors": {
+        "hash": "",
+        "size": 5413724040,
+        "url": ""
+      },
+      "17_qwen3.5_9b_int8_convrot.safetensors": {
+        "hash": "",
+        "size": 9748121532,
+        "url": ""
+      },
+      "19_Moss\\moss 8 step turbo lora.safetensors": {
+        "hash": "",
+        "size": 1189176800,
+        "url": ""
+      },
+      "19_Moss/moss 8 step turbo lora.safetensors": {
+        "hash": "",
+        "size": 1189176800,
+        "url": ""
+      },
+      "29_taeh3.safetensors": {
+        "hash": "",
+        "size": 9791388,
+        "url": ""
+      }
+    },
+    "pixaromaGroups": [
+      {
+        "id": "pg_mvsw45wv_0_avqe",
+        "title": "Loaders",
+        "x": 1472.295901003966,
+        "y": 1274.5342706682118,
+        "w": 744.2405607135745,
+        "h": 843.0377171749992,
+        "titleColor": "#4a4a4e",
+        "bodyColor": "#2a2a2a",
+        "titleAlpha": 0.92,
+        "bodyAlpha": 0.5,
+        "fontSize": 18
+      },
+      {
+        "id": "pg_mvsyjqv2_5_jmn5",
+        "title": "Group",
+        "x": 2753.6074025356224,
+        "y": 2163.758415879647,
+        "w": 364,
+        "h": 1011.7975665347667,
+        "titleColor": "#272783",
+        "bodyColor": "#015bb6",
+        "titleAlpha": 0.92,
+        "bodyAlpha": 0.5,
+        "fontSize": 18
+      }
+    ],
+    "cablemanagement_combs": []
+  },
+  "extensions": {
+    "seed_widgets": {
+      "8": 0
+    }
+  },
+  "version": 0.4
+}
